@@ -30,6 +30,10 @@ import { CrearSolicitudComponent } from './modulos/solicitudes/crear-solicitud/c
 import { BuscarSolicitudComponent } from './modulos/solicitudes/buscar-solicitud/buscar-solicitud.component';
 import { EditarSolicitudComponent } from './modulos/solicitudes/editar-solicitud/editar-solicitud.component';
 import { EliminarSolicitudComponent } from './modulos/solicitudes/eliminar-solicitud/eliminar-solicitud.component';
+import { BarraNavegacionComponent } from './plantilla/barra-navegacion/barra-navegacion.component';
+import { PiePaginaComponent } from './plantilla/pie-pagina/pie-pagina.component';
+import { InicioComponent } from './plantilla/inicio/inicio.component';
+import { ErrorComponent } from './plantilla/error/error.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +64,11 @@ import { EliminarSolicitudComponent } from './modulos/solicitudes/eliminar-solic
     CrearSolicitudComponent,
     BuscarSolicitudComponent,
     EditarSolicitudComponent,
-    EliminarSolicitudComponent
+    EliminarSolicitudComponent,
+    BarraNavegacionComponent,
+    PiePaginaComponent,
+    InicioComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
