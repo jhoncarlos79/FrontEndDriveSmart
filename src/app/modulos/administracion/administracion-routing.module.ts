@@ -81,7 +81,7 @@ const routes: Routes = [
     component: CrearTipoVehiculoComponent
   },
   {
-    path: 'editar-tipo-vehiculo',
+    path: 'ditar-tipo-vehiculo',
     component: EditarTipoVehiculoComponent
   },
   {
@@ -94,7 +94,7 @@ const routes: Routes = [
     component: BuscarVehiculoComponent
   },
   {
-    path: 'crear-vehiculo',
+    path: 'rear-vehiculo',
     component: CrearVehiculoComponent
   },
   {
