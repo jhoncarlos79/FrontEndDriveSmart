@@ -1,6 +1,6 @@
 <div class="container">
 
-    <form >
+    <form [formGroup]="fgValidar" (ngSubmit)="IdentificarUsuario()">
         <!-- Change The Form Method From Here-->
         <div class="card-panel z-depth-5">
 
@@ -18,7 +18,7 @@
             <div class="col s12 m12 l12">
                 <div class="input-field">
                     <i class="material-icons prefix">person</i>
-                    <input  type="text" name="username" id="username">
+                    <input formControlName="usuario" type="text" name="username" id="username">
                     <label for="username">Username</label>
                 </div>
             </div>
@@ -28,7 +28,7 @@
             <div class="col m12 l12">
                 <div class="input-field">
                     <i class="material-icons prefix">lock</i>
-                    <input  type="password" name="password" id="password">
+                    <input formControlName="clave" type="password" name="password" id="password">
                     <label for="password">Password</label>
                 </div>
             </div>
@@ -44,7 +44,7 @@
             <!-- Form Button Section  -->
 
             <div class="center">
-                <button class="btn waves-effect waves-light grey darken-4" type="submit" name="action">Entrar
+                <button [disabled]="!fgValidar.valid" class="btn waves-effect waves-light grey darken-4" type="submit" name="action">Entrar
                     <i class="material-icons right">send</i>
                   </button>
             </div>
