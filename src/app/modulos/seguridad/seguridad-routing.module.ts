@@ -1,7 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CambioClaveComponent } from './cambio-clave/cambio-clave.component';
+import { IdentificarComponent } from './identificar/identificar.component';
+import { RecuperarClaveComponent } from './recuperar-clave/recuperar-clave.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'cambio-clave',
+    component: CambioClaveComponent
+  },
+  {
+    path: 'identificar',
+    component: IdentificarComponent
+  },
+  {
+    path: 'recuperar-clave',
+    component: RecuperarClaveComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
