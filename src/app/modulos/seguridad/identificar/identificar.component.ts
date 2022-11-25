@@ -23,6 +23,7 @@ export class IdentificarComponent {
     let claveCifrada = CryptoJS.MD5(clave).toString();
     //alert("Datos Validados " + usuario + " / " + clave);
     this.servicioSeguridad.IdentificarCliente(usuario, claveCifrada).subscribe((datos: any)=> {
+      this.servicioSeguridad.AlmacenarSesion(datos);
       alert("Datos Ok");
     }, (error: any) => {
       alert("Error");

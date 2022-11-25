@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./barra-navegacion.component.css']
 })
 export class BarraNavegacionComponent {
-
+  seInicioSesion:boolean = false
 }
