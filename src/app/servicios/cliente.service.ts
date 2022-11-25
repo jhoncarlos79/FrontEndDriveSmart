@@ -17,7 +17,11 @@ export class ClienteService {
    }
 
   ObtenerClientes(): Observable<ModeloCliente[]>{
-    return this.http.get<ModeloCliente[]>(`${this.url}/clientes`);
+    return this.http.get<ModeloCliente[]>(`${this.url}/clientes`, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      })
+    });
   }
 
   CrearCliente(cliente:ModeloCliente): Observable<ModeloCliente> {
