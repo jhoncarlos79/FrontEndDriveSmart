@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import * as CryptoJS from 'crypto-js';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 
@@ -15,7 +16,7 @@ export class IdentificarComponent {
     'clave': ['', [Validators.required]]
   })
 
-  constructor(private fb: FormBuilder, private servicioSeguridad: SeguridadService ){}
+  constructor(private fb: FormBuilder, private servicioSeguridad: SeguridadService, private router: Router){}
 
   IdentificarUsuario(){
     let usuario = this.fgValidar.controls["usuario"].value;
@@ -23,7 +24,8 @@ export class IdentificarComponent {
     let claveCifrada = CryptoJS.MD5(clave).toString();
     //alert("Datos Validados " + usuario + " / " + clave);
     this.servicioSeguridad.IdentificarCliente(usuario, claveCifrada).subscribe((datos: any)=> {
-      alert("Datos Ok");
+      this.servicioSeguridad.AlmacenarSesion(datos);
+      this.router.navigate(["/inicio"]);
     }, (error: any) => {
       alert("Error");
     })
