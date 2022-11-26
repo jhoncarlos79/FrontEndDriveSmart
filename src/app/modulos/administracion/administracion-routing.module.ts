@@ -59,7 +59,7 @@ const routes: Routes = [
     component: CrearClienteComponent
   },
   {
-    path: 'editar-cliente',
+    path: 'editar-cliente/:id',
     component: EditarClienteComponent
   },
   {
@@ -67,7 +67,7 @@ const routes: Routes = [
     component: BuscarClienteComponent
   },
   {
-    path: 'eliminar-cliente',
+    path: 'eliminar-cliente/:id',
     component: EliminarClienteComponent
   },
   {

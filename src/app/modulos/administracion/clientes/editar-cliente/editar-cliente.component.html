@@ -1,1 +1,43 @@
-<p>editar-cliente works!</p>
+<div class="row">
+    <h4 class="center-align">Editar Cliente</h4>
+    <article class="col s6 offset-s3">
+        <form [formGroup]="fgValidar" (ngSubmit)="EditarCliente()">
+            <input type="hidden" formControlName="id"/>
+            <div class="input-field">
+                <label class="active" for="nombre">Nombre</label>
+                <input formControlName="nombre" type="text" name="nombre" id="nombre" required/>
+            </div>
+            <div class="input-field">
+                <label class="active" for="apellido">Apellido</label>
+                <input formControlName="apellido" type="text" name="apellido" id="apellido" required/>
+            </div>
+            <div class="input-field">
+                <label class="active" for="tipoDocumento">Tipo Documento</label>
+                <input formControlName="tipoDocumento" type="text" name="tipoDocumento" id="tipoDocumento" required/>
+            </div>
+            <div class="input-field">
+                <label class="active" for="documento">Documento</label>
+                <input formControlName="documento" type="text" name="documento" id="documento" required/>
+            </div>
+            <div class="input-field">
+                <label class="active" for="direccion">Direccion</label>
+                <input formControlName="direccion" type="text" name="direccion" id="direccion" required/>
+            </div>
+            <div class="input-field">
+                <label class="active" for="telefono">Telefono</label>
+                <input formControlName="telefono" type="text" name="telefono" id="telefono" required/>
+            </div>
+            <div class="input-field">
+                <label class="active" for="correo">Correo</label>
+                <input formControlName="correo" type="text" name="correo" id="correo" required/>
+            </div>
+            <input type="hidden" formControlName="contrasena"/>
+            <p class="center-align">
+                <button [disabled]="!fgValidar.valid" class="waves-effect waves-light btn" type="submit">
+                    <i class="material-icons right">send</i>Actualizar
+                </button>
+            </p>
+        </form>
+
+    </article>
+</div>
