@@ -1,5 +1,5 @@
 <div class="row">
-    <h4 class="center-align">Crear Cliente</h4>
+    <h4 class="center-align">Editar Cliente</h4>
     <article class="col s6 offset-s3">
         <form [formGroup]="fgValidar" (ngSubmit)="EditarCliente()">
             <input type="hidden" formControlName="id"/>
@@ -34,7 +34,7 @@
             <input type="hidden" formControlName="contrasena"/>
             <p class="center-align">
                 <button [disabled]="!fgValidar.valid" class="waves-effect waves-light btn" type="submit">
-                    <i class="material-icons right">send</i>Adicionar
+                    <i class="material-icons right">send</i>Actualizar
                 </button>
             </p>
         </form>
