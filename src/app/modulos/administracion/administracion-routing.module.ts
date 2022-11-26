@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ValidadorSesionGuard } from 'src/app/guardianes/validador-sesion.guard';
 import { BuscarAdministradorComponent } from './administradores/buscar-administrador/buscar-administrador.component';
 import { CrearAdministradorComponent } from './administradores/crear-administrador/crear-administrador.component';
 import { EditarAdministradorComponent } from './administradores/editar-administrador/editar-administrador.component';
@@ -56,19 +57,23 @@ const routes: Routes = [
   },
   {
     path: 'crear-cliente',
-    component: CrearClienteComponent
+    component: CrearClienteComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'editar-cliente/:id',
-    component: EditarClienteComponent
+    component: EditarClienteComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'buscar-cliente',
-    component: BuscarClienteComponent
+    component: BuscarClienteComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'eliminar-cliente/:id',
-    component: EliminarClienteComponent
+    component: EliminarClienteComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'crear-tipo-vehiculo',
