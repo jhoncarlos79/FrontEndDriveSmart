@@ -24,6 +24,14 @@ export class ClienteService {
     });
   }
 
+  ObtenerClientePorId(id:string): Observable<ModeloCliente>{
+    return this.http.get<ModeloCliente>(`${this.url}/clientes/${id}`, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      })
+    });
+  }
+
   CrearCliente(cliente:ModeloCliente): Observable<ModeloCliente> {
     return this.http.post<ModeloCliente>(`${this.url}/clientes`, cliente, {
         headers: new HttpHeaders({
@@ -33,7 +41,7 @@ export class ClienteService {
   }
 
   ActualizarCliente(cliente:ModeloCliente): Observable<ModeloCliente> {
-    return this.http.put<ModeloCliente>(`${this.url}/clientes`, cliente, {
+    return this.http.put<ModeloCliente>(`${this.url}/clientes/${cliente.id}`, cliente, {
         headers: new HttpHeaders({
           'Authorization': `Bearer ${this.token}`
         })
