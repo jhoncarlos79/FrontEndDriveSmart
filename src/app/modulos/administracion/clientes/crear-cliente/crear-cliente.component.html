@@ -1,1 +1,42 @@
-<p>crear-cliente works!</p>
+<div class="row">
+    <h4 class="center-align">Crear Cliente</h4>
+    <article class="col s6 offset-s3">
+        <form [formGroup]="fgValidar" (ngSubmit)="GuardarCliente()">
+            <div class="input-field">
+                <label for="nombre">Nombre</label>
+                <input formControlName="nombre" type="text" name="nombre" id="nombre" required/>
+            </div>
+            <div class="input-field">
+                <label for="apellido">Apellido</label>
+                <input formControlName="apellido" type="text" name="apellido" id="apellido" required/>
+            </div>
+            <div class="input-field">
+                <label for="tipoDocumento">Tipo Documento</label>
+                <input formControlName="tipoDocumento" type="text" name="tipoDocumento" id="tipoDocumento" required/>
+            </div>
+            <div class="input-field">
+                <label for="documento">Documento</label>
+                <input formControlName="documento" type="text" name="documento" id="documento" required/>
+            </div>
+            <div class="input-field">
+                <label for="direccion">Direccion</label>
+                <input formControlName="direccion" type="text" name="direccion" id="direccion" required/>
+            </div>
+            <div class="input-field">
+                <label for="telefono">Telefono</label>
+                <input formControlName="telefono" type="text" name="telefono" id="telefono" required/>
+            </div>
+            <div class="input-field">
+                <label for="correo">Correo</label>
+                <input formControlName="correo" type="text" name="correo" id="correo" required/>
+            </div>
+
+            <p class="center-align">
+                <button [disabled]="!fgValidar.valid" class="waves-effect waves-light btn" type="submit">
+                    <i class="material-icons right">send</i>Adicionar
+                </button>
+            </p>
+        </form>
+
+    </article>
+</div>

@@ -22,6 +22,7 @@ import { CrearTipoVehiculoComponent } from './tipo-vehiculos/crear-tipo-vehiculo
 import { EditarTipoVehiculoComponent } from './tipo-vehiculos/editar-tipo-vehiculo/editar-tipo-vehiculo.component';
 import { EliminarTipoVehiculoComponent } from './tipo-vehiculos/eliminar-tipo-vehiculo/eliminar-tipo-vehiculo.component';
 import { BuscarTipoVehiculoComponent } from './tipo-vehiculos/buscar-tipo-vehiculo/buscar-tipo-vehiculo.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -49,7 +50,9 @@ import { BuscarTipoVehiculoComponent } from './tipo-vehiculos/buscar-tipo-vehicu
   ],
   imports: [
     CommonModule,
-    AdministracionRoutingModule
+    AdministracionRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdministracionModule { }
